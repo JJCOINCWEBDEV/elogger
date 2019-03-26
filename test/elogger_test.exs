@@ -1,8 +1,8 @@
-defmodule EloggerTest do
+defmodule ELoggerTest do
   use ExUnit.Case
-  doctest Elogger
+  doctest ELogger
 
   test "greets the world" do
-    assert Elogger.hello() == :world
+    assert ELogger.hello() == :world
   end
 end

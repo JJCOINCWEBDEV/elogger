@@ -1,5 +1,5 @@
-defmodule Elogger.Formatters.JSON do
-  alias Elogger.Formatters.Helper
+defmodule ELogger.Formatters.JSON do
+  alias ELogger.Formatters.Helper
 
   def format(level, message, timestamp, metadata) do
     timestamp = Helper.timestamp(timestamp)
@@ -26,7 +26,7 @@ defmodule Elogger.Formatters.JSON do
         json
       else
         {:error, error} ->
-          Sentry.capture_message(inspect(error), stacktrace: Elogger.current_stacktrace())
+          Sentry.capture_message(inspect(error), stacktrace: ELogger.current_stacktrace())
           %{message: "Internal logger error, please see sentry for details", level: :error} |> Poison.encode!()
       end
 

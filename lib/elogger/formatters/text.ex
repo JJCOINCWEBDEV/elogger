@@ -1,5 +1,5 @@
-defmodule Elogger.Formatters.Text do
-  alias Elogger.Formatters.Helper
+defmodule ELogger.Formatters.Text do
+  alias ELogger.Formatters.Helper
 
   def format(level, message, timestamp, metadata) do
     timestamp = Helper.timestamp(timestamp)

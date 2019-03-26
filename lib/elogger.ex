@@ -1,6 +1,6 @@
-defmodule Elogger do
+defmodule ELogger do
   @moduledoc """
-  Documentation for Elogger.
+  Documentation for ELogger.
   """
 
   def current_stacktrace do

@@ -1,4 +1,4 @@
-# Elogger
+# ELogger
 
 **TODO: Add description**
 

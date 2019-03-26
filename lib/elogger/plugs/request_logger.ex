@@ -1,4 +1,4 @@
-defmodule Elogger.Plugs.RequestLogger do
+defmodule ELogger.Plugs.RequestLogger do
   @moduledoc """
   A plug for logging basic request information in the format.
   Based on Plug.Logger.

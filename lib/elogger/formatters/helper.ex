@@ -1,4 +1,4 @@
-defmodule Elogger.Formatters.Helper do
+defmodule ELogger.Formatters.Helper do
   def metadata_value(value) do
     case value do
       %{__struct__: Ecto.Association.NotLoaded} ->
@@ -42,7 +42,7 @@ defmodule Elogger.Formatters.Helper do
         |> DateTime.to_iso8601()
 
       {:error, error} ->
-        Sentry.capture_message("Invalid Timestamp #{timestamp}, reason: #{error}", stacktrace: Elogger.current_stacktrace())
+        Sentry.capture_message("Invalid Timestamp #{timestamp}, reason: #{error}", stacktrace: ELogger.current_stacktrace())
         DateTime.to_iso8601(DateTime.utc_now())
     end
   end
