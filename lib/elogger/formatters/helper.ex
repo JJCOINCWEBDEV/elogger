@@ -57,8 +57,8 @@ defmodule ELogger.Formatters.Helper do
     end
   end
 
-  defp convert_if_no_encoder(nil, _converter) do
-    nil
+  defp convert_if_no_encoder(value, _converter) when value in [nil, true, false] do
+    value
   end
 
   defp convert_if_no_encoder(value, converter) do
