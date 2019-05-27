@@ -22,12 +22,12 @@ defmodule ELogger.Formatters.JSON do
       |> Map.merge(main_data)
 
     json =
-      with {:ok, json} <- Poison.encode(data) do
+      with {:ok, json} <- Jason.encode(data) do
         json
       else
         {:error, error} ->
           Sentry.capture_message(inspect(error), stacktrace: ELogger.current_stacktrace())
-          %{message: "Internal logger error, please see sentry for details", level: :error} |> Poison.encode!()
+          %{message: "Internal logger error, please see sentry for details", level: :error} |> Jason.encode!()
       end
 
     json <> "\n"
