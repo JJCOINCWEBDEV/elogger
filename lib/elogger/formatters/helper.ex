@@ -62,8 +62,8 @@ defmodule ELogger.Formatters.Helper do
   end
 
   defp convert_if_no_encoder(value, converter) do
-    case Poison.Encoder.impl_for(value) do
-      encoder when encoder in [Poison.Encoder.Atom, Poison.Encoder.Integer, Poison.Encoder.Float, Poison.Encoder.Any] ->
+    case Jason.Encoder.impl_for(value) do
+      encoder when encoder in [Jason.Encoder.Atom, Jason.Encoder.Integer, Jason.Encoder.Float, Jason.Encoder.Any] ->
         converter.(value)
 
       _else ->

@@ -34,7 +34,7 @@ defmodule ELogger.Formatters.Text do
         IO.ANSI.reset(),
         "\n",
         IO.ANSI.light_magenta(),
-        Poison.encode!(encoded_metadata),
+        Jason.encode!(encoded_metadata),
         IO.ANSI.reset()
       ]
       |> Enum.join(" ")
