@@ -23,7 +23,7 @@ defmodule ELogger.MixProject do
     [
       {:jason, "~> 1.1"},
       {:plug, "~> 1.8"},
-      {:sentry, "~> 7.2"}
+      {:sentry, "~> 8.0"}
     ]
   end
 end
