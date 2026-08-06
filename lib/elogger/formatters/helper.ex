@@ -42,7 +42,7 @@ defmodule ELogger.Formatters.Helper do
         |> DateTime.to_iso8601()
 
       {:error, error} ->
-        Sentry.capture_message("Invalid Timestamp #{timestamp}, reason: #{error}", stacktrace: ELogger.current_stacktrace())
+        Sentry.capture_message("Invalid Timestamp #{inspect(timestamp)}, reason: #{error}", stacktrace: ELogger.current_stacktrace())
         DateTime.to_iso8601(DateTime.utc_now())
     end
   end
