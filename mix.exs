@@ -21,9 +21,10 @@ defmodule ELogger.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:jason, "~> 1.1"},
-      {:plug, "~> 1.8"},
-      {:sentry, "~> 7.2"}
+      {:jason, "== 1.4.1"},
+      {:plug, "== 1.15.2"},
+      {:sentry, "~> 10.1.0"},
+      {:hackney, "~> 1.20.1"}
     ]
   end
 end
