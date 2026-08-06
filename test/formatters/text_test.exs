@@ -1,6 +1,5 @@
 defmodule ELogger.Formatters.TextTest do
   use ExUnit.Case, async: true
-  use Plug.Test
 
   alias ELogger.Formatters.Text
 

@@ -1,6 +1,5 @@
 defmodule ELogger.Formatters.JSONTest do
   use ExUnit.Case, async: true
-  use Plug.Test
 
   alias ELogger.Formatters.JSON
 
