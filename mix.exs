@@ -4,8 +4,8 @@ defmodule ELogger.MixProject do
   def project do
     [
       app: :elogger,
-      version: "1.2.0",
-      elixir: "~> 1.15",
+      version: "1.3.0",
+      elixir: "~> 1.20",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
