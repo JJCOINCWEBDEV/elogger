@@ -1,7 +1,7 @@
 defmodule ELogger.Formatters.JSONTest do
   use ExUnit.Case, async: true
 
-  alias ELogger.Formatters.JSON
+  alias ELogger.Formatters.{JSON, Helper}
 
   doctest JSON
 
@@ -31,5 +31,19 @@ defmodule ELogger.Formatters.JSONTest do
     assert log_output =~ @message
     assert log_output =~ "{\"key_a\":\":foo\",\"key_b\":\"123\"}"
     assert log_output =~ Atom.to_string(level)
+
+    assert {:ok, result} = Jason.decode(log_output)
+    assert result["message"] == @message
+    assert result["timestamp"] == Helper.timestamp(@timestamp)
+    assert result["level"] == Atom.to_string(level)
+
+    metadata =
+      @metadata
+      |> Enum.map(fn {k, v} ->
+        {Atom.to_string(k), Helper.metadata_value(v)}
+      end)
+      |> Enum.into(%{})
+
+    assert result["no_application"] == metadata
   end
 end
