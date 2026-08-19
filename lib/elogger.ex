@@ -5,6 +5,6 @@ defmodule ELogger do
 
   def current_stacktrace do
     {:current_stacktrace, stacktrace} = Process.info(self(), :current_stacktrace)
-    Enum.slice(stacktrace, 2..-1)
+    Enum.slice(stacktrace, 2..-1//1)
   end
 end

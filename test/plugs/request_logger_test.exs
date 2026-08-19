@@ -1,8 +1,8 @@
 defmodule ELogger.Plugs.RequestLoggerTest do
   use ExUnit.Case, async: true
-  use Plug.Test
 
   import ExUnit.CaptureLog
+  import Plug.Test
 
   alias ELogger.Plugs.RequestLogger
 
