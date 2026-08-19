@@ -52,7 +52,7 @@ defmodule ELogger.Formatters.Helper do
       :info -> IO.ANSI.green()
       :error -> IO.ANSI.red()
       :debug -> IO.ANSI.light_blue()
-      :warn -> IO.ANSI.yellow()
+      :warning -> IO.ANSI.yellow()
       _ -> IO.ANSI.white()
     end
   end

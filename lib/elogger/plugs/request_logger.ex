@@ -25,7 +25,7 @@ defmodule ELogger.Plugs.RequestLogger do
     Conn.register_before_send(conn, fn conn ->
       Logger.log(level, fn ->
         stop = System.monotonic_time()
-        diff = System.convert_time_unit(stop - start, :native, :micro_seconds)
+        diff = System.convert_time_unit(stop - start, :native, :microsecond)
 
         {"Response ready", connection_type: connection_type(conn), status: conn.status, duration: diff / 1000.0, resp_body: conn.resp_body}
       end)
